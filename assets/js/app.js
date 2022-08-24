@@ -76,8 +76,7 @@ function findCity(city){
                     $('.uvColors').attr('style', 'background-color: yellow; border-radius: 5px; padding: 3px 5px; font-weight: bold; color: black')
                 }
 
-                //Generates 5 day weather forecast for target city
-                $('#fiverForecast').text('5 Day Forecast')
+                $('#5dayoverview').text('5 Day Forecast')
                 for (i=1; i < 6; i++) {
                     $('#dateFore'+i).text(`Date: ${Date.now().plus({days:i}).toLocaleString()}`);
                     $('#tempFore'+i).text(`Temp: ${output.daily[i].temp.day}ºF`);
@@ -89,8 +88,6 @@ function findCity(city){
     });
 };
 
-//Search Button event listener
 $('#searchBtn').on('click', findCity);
 
-//Search History Buttons event listener
 $('.btn').on('click', history);
